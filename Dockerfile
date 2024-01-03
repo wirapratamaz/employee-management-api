@@ -1,6 +1,5 @@
 FROM postgres:latest
-ENV POSTGRES_DB = employee-management
-ENV POSTGRES_USER = postgres
-ENV POSTGRES_PASSWORD = employee123
-COPY ./init.sql /docker-entrypoint-initdb.d/
+ENV POSTGRES_DB=employee-management
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=employee123
 EXPOSE 5432
