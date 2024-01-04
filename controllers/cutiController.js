@@ -3,6 +3,8 @@ const Cuti = require('../models/cuti');
 const cutiController = {
   getAllCuti: async (req, res) => {
     try {
+      const sortBy = req.query.sortBy || 'tanggalCuti'; // sortby tanggalCuti
+      const order = req.query.order || 'ASC'; // order ASC
       const cutiRecords = await Cuti.findAll();
       res.status(200).json(cutiRecords);
     } catch (error) {

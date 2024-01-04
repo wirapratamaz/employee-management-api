@@ -4,6 +4,8 @@ const karyawanController = {
   // Get all Karyawan records
   getAllKaryawan: async (req, res) => {
     try {
+      const sortBy = req.query.sortBy || 'nomorInduk'; // sortby nomorInduk
+      const order = req.query.order || 'ASC'; // order ASC
       const karyawan = await Karyawan.findAll();
       res.status(200).json(karyawan);
     } catch (error) {
